@@ -1,0 +1,36 @@
+****Standard Containers in STL****
+Simple containers
+    pair
+    tuple
+
+Sequence containers: ordered collections
+    vector: dynamic array
+    list: doubly linked list
+    deque: double-ended queue (adapted to stack and queue)
+
+Associated containers: unordered collections
+    set, multiset
+    map: dictionary(internally ordered by balanced binary tree)
+    multimap: similar to map, but with duplicate keys
+    unordered_map: dictionary with hash
+
+
+*****Standard Adaptors in STL****
+Adaptors: template classes have default containers underneath ex) stack, queue -> deque       priority_queue -> vector
+        wrapping a common container to implement data structures
+        Implemented "on top of" other classes
+
+Examples from deque
+    stack
+    queue
+
+Examples from vector
+    priority_queue
+
+priority_queue
+    priority_queue<T, container<T>, order)
+    vector is default container
+    default order is ascending order (std::less<T>)
+    example declaration
+        priority_queue<int> p_queue;
+        priority_queue<int, deque<int>, std::greater<int>> p_queue;

@@ -1,0 +1,28 @@
+#include <vector>
+
+arrays that automatically grow and shrink
+Array-like data structure dynamically resized during program execution
+However, we do not care about the memory alloc/dealloc
+
+Syntax
+    std::vector<Base_Type>
+    produce "new" class for vectors with that Base_Type
+    example)
+        std::vector<int> v;
+        "v is vector of type int"
+        Calls class default constructor: empty vector object created
+
+Indexing: indexed like arrays for access (e.g., v[0], v[1], v[k], ...)
+Adding: push_back()
+Querying the count of elements: size()
+
+Additional Member function
+    capacity() : return memory currently allocated
+                Typically, capacity >= size
+                In practice, when capacity is not enough, the capacity is doubled
+
+    reserve(size_t) : v.reserve(32) -> pre-set capacity to 32
+                    v.reserve(v.size() + 10) -> alloc 10 more elements
+
+Many other convenient member functions
+-> https://www.cplusplus.com/reference/vector/vector/

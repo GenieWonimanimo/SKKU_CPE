@@ -1,0 +1,33 @@
+Generalization of a pointer to STL containers/adaptors
+Typically even implemented with pointer
+
+Abstraction of iterators
+    Designed to hide details of implemetation
+    Provide consistent interface across different container classes
+
+Each container class has "own" iterator type
+    Similar to how each data type has own pointer type
+    const_iterator only support read
+
+Recall using overloaded operators
+    ++, --, ==, !=, *
+    So if p is an iterator variable, *p gives access to data pointed to by p
+    example)
+        // return iterator for the first item in c
+        std::vector<int>::iterator it = c.begin();
+        // return iterator for after-last item in c
+        // e.g., for size-2 vector, end() indicates index 2
+        auto it2 = c.end();
+    usage example)
+        for (auto p = c.begin(); p != c.end(); p++)
+            process(*p); // *p is current data item
+
+Reverse iterators
+    To cycle elements in reverse order
+    Requires container with bidirectional iterators
+    Use reverse iterators to cycle elements in reverse order
+        rbegin(): returns iterator ar last element
+        rend(): returns sentinel "end" marker
+        example)
+            for (vector<int>::reverse_iterator rp = c.rbegin(); rp != c.rend(); rp++) // need to increment because iterator is reversed
+                cout << *rp << " ";

@@ -1,0 +1,37 @@
+Different kind of data structures
+Like lists, queues, stacks
+
+Each with parameter for particular data type to be stored
+    e.g., list of ints, doubles, or myClass types
+
+Each has own iterators
+    One might have bidirectional, another might just have forward iterators
+    But all operators and members have same meaning
+
+Sequential Containers
+    Arranges list data
+        1st ele, 2nd ele, 3rd ele...
+    Linked list is sequential container
+        STL has only double linked list
+        operator[] is not defined in list
+
+Associative container
+    Simple database of dictionary
+    Store data with key: each data item has key
+
+    Set
+        Simplest container
+        Stores elements without repetition
+        Each element is own key
+
+        Designed to be efficient
+            Stores value in sorted order
+            Can specify order: set<T, ordering> s; (default: ascending order, smallest be first)
+                Ordering is well-behaved ordering relation that returns bool
+
+    Map
+        For each value first, at most one value second in map considering (first, second) pair
+        example map declaration : map<string, int> numberMap;
+        Can use [] notation to access the map
+        Stores in sorted order, like set
+        
